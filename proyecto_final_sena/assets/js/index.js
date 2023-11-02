@@ -79,7 +79,8 @@ window.addEventListener('DOMContentLoaded',()=>{
         }
     });
     adminButton.addEventListener('click',()=>{
-         window.location.href = "data.html";
+        adminButton.setAttribute('disabled', false);
+        window.location.href = "data.html";
     });
     // -----
     // Fuctions
