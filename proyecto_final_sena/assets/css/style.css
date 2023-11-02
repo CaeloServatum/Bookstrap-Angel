@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    background-color: #FFDE59;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Nunito', sans-serif;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+}
+form{
+    width: 35%;
+    padding: 15px;
+    background-color: #76401E;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+form div textarea{
+    width: 100%;
+    height: 180px;
+    resize: none;
+    margin: 0 auto 5px 0;
+}
+form div label, input, textarea{
+    margin-bottom: 5px;
+    display: flex;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    padding: 5px;
+}
+form div input, textarea{
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 400;
+    color: grey;
+}
+form div label{
+    width: 100%;
+    text-align: center;
+    font-weight: 800;
+    font-size: 15px;
+    color: #FFDE59;
+}
+form div input{
+    width: 100%;
+    padding: 10px;
+}
+#email, #cc{
+    text-transform: none;
+}
+form #buttonDiv{
+    display: flex;
+    margin-top: 5px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+form div button{
+    width: 49%;
+    height: 45px;
+    border-radius: 5px;
+    outline: none;
+    border-style: none;
+    cursor: pointer;
+    background-color: #FFDE59;
+    border: #b6a049 solid 1px;
+    color: #76401E;
+    overflow: hidden;
+}
+form div button i{
+    margin-right: 5px;
+}
+.fa-paper-plane{
+    position: relative;
+    offset-distance: 0%;
+    transition: offset-distance 0.3s ease-in, filter 0.3s ease-in;
+    top: -211px;
+    left: -245px;
+    transform: rotate(122deg);
+    offset-path: path("M 250 217.5 C 202 118.3 128 193.667 97.0001 235 C -273 -214.5 241.167 124.667 517 111 L 411.5 217.5 C 377.667 258.833 298 316.7 250 217.5 Z");
+}
+form div button:hover .fa-paper-plane{
+    offset-distance: 100%;
+    filter: drop-shadow(2px 2px 1px #b6a049);
+}
+form div button .fa-eraser{
+    position: relative;
+    left: 0;
+}
+form div button:hover .fa-eraser{
+    animation: erase 0.8s linear infinite;
+}
+@keyframes erase {
+    0% {
+        left: 0px;
+    }
+    50%{
+        left: -5px;
+    }
+    80%{
+        left: 5px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+form .required::placeholder{
+    color: rgba(255, 0, 0, 0.596);
+}
+form .wrongValue{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    background-color: #b6a049;
+    border-radius: 5px;
+    border: 1px solid #76401E;
+    padding: 10px;
+    color: #FFDE59;
+}
+form .disableButton {
+    border: 1px solid #b6a049;
+    background-color: #f3e4a7;
+    cursor: not-allowed;
+}
+.blurBody{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: blur(0px);
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.divLoader{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: -28px;
+}
+.loader {
+    width: 8px;
+    height: 48px;
+    display: block;
+    margin: auto;
+    left: -20px;
+    position: relative;
+    border-radius: 4px;
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite alternate;
+  }
+.sendSucefully{
+    display: none;
+    position: absolute;
+    widows: 45%;
+    padding: 15px;
+    background-color: #79328C;
+    border: 1px solid #32043F;
+    border-radius: 5px;
+    color: #f2c3ff;
+    top: -10%;
+    transform: translateY(0%);
+    animation: sendSucefully 3s ease-in-out;
+}
+header{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 5px 0 15px 0;
+}
+header h1{
+    width: 100%;
+    color: #76401E;
+    text-align: center;
+    font-family: SketchRockwell;
+    font-size: max(95%, 40px);;
+}
+header img{
+    width: max(15%, 150px);
+}
+  
+@keyframes animloader {
+    0% {
+        box-shadow: 20px 0 rgba(255, 255, 255, 0.25), 40px 0 #c56b33, 60px 0 #c56b33;
+    }
+    50% {
+        box-shadow: 20px 0 #c56b33, 40px 0 rgba(255, 255, 255, 0.25), 60px 0 #c56b33;
+    }
+    100% {
+        box-shadow: 20px 0 #c56b33, 40px 0 #c56b33, 60px 0 rgba(255, 255, 255, 0.25);
+    }
+}
+@media (min-width: 2560px) {
+    header h1{
+        font-size: 85px;
+    }
+}
+@media (max-width: 768px) {
+    form{
+        width: 75%;
+    }
+}
+@media (max-width: 425px) {
+    form{
+        width: 95%;
+        padding: 10px;
+    }
+}
+@font-face {
+    font-family: SketchRockwell;
+    src: url(../Fonts/SketchRockwell-Bold.ttf);
+}
